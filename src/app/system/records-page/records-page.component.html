@@ -1,0 +1,26 @@
+<article class="content">
+  <div class="title-block">
+    <h3 class="title">
+      Страница записей <span class="sparkline bar"></span>
+    </h3>
+  </div>
+
+  <section class="section text-center" *ngIf="!isLoaded">
+    Loading...
+  </section>
+  <section class="section" *ngIf="isLoaded">
+    <div class="row">
+      <div class="col-md-6">
+        <bk-add-event [categories]="allCategories"></bk-add-event>
+      </div>
+      <div class="col-md-6">
+        <bk-add-category (onCategoryAdd)="newCategoryAdded($event)"></bk-add-category>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <bk-edit-category (onCategoryEdit)="categoryEdited($event)" [categories]="allCategories"></bk-edit-category>
+      </div>
+    </div>
+  </section>
+</article>

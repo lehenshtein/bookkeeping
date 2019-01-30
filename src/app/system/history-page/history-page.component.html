@@ -1,0 +1,23 @@
+<article class="content">
+  <div class="title-block">
+    <h3 class="title">
+      Страница истории <span class="sparkline bar"></span>
+    </h3>
+  </div>
+  <div *ngIf="!isLoaded" class="text-center">
+    Loading...
+  </div>
+  <div *ngIf="isLoaded">
+    <!--Chart-->
+    <bk-history-chart [data]="chartData"></bk-history-chart>
+    <!--EndChart-->
+    <bk-history-events
+      [categories]="categories"
+      [events]="events"
+    ></bk-history-events>
+    <bk-history-filter></bk-history-filter>
+  </div>
+
+</article>
+<!--MODAL-->
+<!--MODAL-->

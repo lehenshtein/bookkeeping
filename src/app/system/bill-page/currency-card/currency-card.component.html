@@ -1,0 +1,27 @@
+<div class="col col-xs-12 col-sm-12 col-md-6 col-xl-7 history-col">
+  <div class="card">
+    <div class="card-block">
+      <div class="title-block">
+        <h4 class="title">Курс</h4>
+      </div>
+      <div class="row row-sm stats-container">
+        <table class="table table-hover">
+          <thead>
+          <tr>
+            <th>Валюта</th>
+            <th>Покупка</th>
+            <th>Продажа</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let i of currencyIn">
+            <td>{{i.ccy}}</td>
+            <td>{{i.buy | number: '1.2'}}</td>
+            <td>{{i.sale | number: '1.2'}}</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

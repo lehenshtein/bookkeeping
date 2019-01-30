@@ -1,0 +1,21 @@
+<article class="content dashboard-page">
+  <div class="title-block">
+    <h3 class="title pull-left">
+      Страница счета <span class="sparkline bar"></span>
+    </h3>
+    <div class="pull-right">
+      <button class="btn-sm btn btn-primary-outline">
+        <i class="fa fa-refresh" (click)="onRefresh()"></i>
+      </button>
+    </div>
+  </div>
+  <section class="section">
+    <div class="row text-center" *ngIf="!isLoaded">
+      Loading...
+    </div>
+    <div class="row" *ngIf="isLoaded">
+      <bk-bill-card [billIn]="bill" [currencyIn]="currency"></bk-bill-card>
+      <bk-currency-card [currencyIn]="currency"></bk-currency-card>
+    </div>
+  </section>
+</article>
